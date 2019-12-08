@@ -48,6 +48,7 @@ class MainApp(tk.Tk):
         customsrchbtn.pack(side='left', pady=10)
         importdata.pack(side='left', pady=10)
         calcfields.pack(side='left', pady=10)
+        aggstats.pack(side='left', pady=10)
         navbar.configure(bd=1, relief='raised')
         navbar.configure(bg=green)
 
