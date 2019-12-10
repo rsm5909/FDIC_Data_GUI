@@ -11,11 +11,11 @@ class GridResult(tk.Canvas):
         tk.Canvas.__init__(self, parent)
         self.frame = tk.Frame(self)
 
-        self.frame.configure(bg='gray')
+        self.frame.configure(bg='orange')
         self.configure(bg=grey)
         self.create_window(0, 0, anchor='nw', window=self.frame)
         self.parent = parent
-        self.config(width=425, height=590)
+        #self.config(width=425, height=590)
         self.tv_list = []
         self.cr_list = []
         self.date = []

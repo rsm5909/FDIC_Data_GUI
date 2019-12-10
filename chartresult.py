@@ -16,7 +16,7 @@ class ChartResult(tk.Canvas):
         self.parent = parent
         self.create_window(0, 0, anchor='nw', window=self.frame)
         self.w_list = {}
-        self.config(width=425, height=590)
+        #self.config(width=425, height=590)
         self.configure(bg=grey)
         self.config(bd=0, highlightthickness=0)
         self.grid(column=2, row=0, sticky='nsew')

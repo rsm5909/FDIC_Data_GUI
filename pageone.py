@@ -17,6 +17,8 @@ class PageOne(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         # define vars
+        self.varx = 0
+        self.cr = None
         self.view = None
         self.date = None
         self.names = None
@@ -76,7 +78,7 @@ class PageOne(tk.Frame):
         self.excl = tk.Button(self.resultsMenu, image=self.excelicon, width=40, height=30, command=self.popup)
         self.excl.image = self.excelicon
         self.excl.pack(side='top', pady=2)
-        self.chart = tk.Button(self.resultsMenu, image=self.charticon, width=40, height=30, command=None)
+        self.chart = tk.Button(self.resultsMenu, image=self.charticon, width=40, height=30, command=self.removeChart)
         self.chart.image = self.charticon
         self.chart.pack(side='top', pady=2)
         self.resultsMenu.grid(row=0, column=4, sticky='ns')
@@ -229,4 +231,22 @@ class PageOne(tk.Frame):
                 for x in range(len(self.data)):
                     self.data[x].to_excel(writer, sheet_name=self.srch[x])
                 writer.save()
+
+    def removeChart(self):
+        cr = self.results.tvr.cr
+        sb = self.results.tvr.sb2
+        var = self.varx
+        print(var)
+        if var == 0:
+            cr.grid_remove()
+            self.results.grid_columnconfigure(2, weight=0)
+            sb.grid_remove()
+            self.varx = 1
+        else:
+            cr.grid()
+            self.results.grid_columnconfigure(2, weight=1)
+            sb.grid()
+            self.varx = 0
+
+
 
